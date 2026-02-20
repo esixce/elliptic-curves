@@ -2,17 +2,32 @@
 
 Interactive Jupyter notebooks covering the mathematical foundations of elliptic curve cryptography and its applications in Bitcoin — from abstract algebra through ECDSA, Schnorr signatures, and onion routing.
 
-## Notebooks
+## Course Modules
+
+Work through these in order. Each notebook is self-contained (shared code is included as a preamble cell).
 
 | # | File | What it covers |
 |---|------|---------------|
-| 0 | `00-ecc-teachable-scheme.ipynb` | Full course — groups, rings, finite fields, elliptic curves, point operations, ECDSA, Schnorr, exercises |
-| 1 | `01-ecc-wright-trick.ipynb` | How Craig Wright faked a Satoshi signature in 2016 |
-| 2 | `02-ecc-nonsense-signature.ipynb` | The "nonsense signature" algebraic forgery trick |
-| 3 | `03-ecc-original-paper.ipynb` | Original research paper companion notebook |
-| 4 | `04-ecc-projective-sphere.ipynb` | Interactive 3D projective sphere visualization |
+| 0 | `00-intro.ipynb` | Motivation, the two problems ECC solves, roadmap |
+| 1 | `01-algebraic-foundations.ipynb` | Groups, rings, fields, finite fields, projective space |
+| 2 | `02-elliptic-curves.ipynb` | Weierstrass equation, secp256k1 parameters, curves over F_p |
+| 3 | `03-point-operations.ipynb` | Point addition, doubling, scalar multiplication, compression |
+| 4 | `04-key-exchange.ipynb` | ECDH, ElGamal encryption/decryption on curves |
+| 5 | `05-ecdsa.ipynb` | Signing, verification, nonce catastrophe, DER encoding |
+| 6 | `06-bitcoin-applications.ipynb` | Schnorr signatures (BIP 340), ECDH in Lightning onion routing |
+| 7 | `07-exercises.ipynb` | Self-assessment, exercises, knowledge map, further reading |
 
-Start with `00-ecc-teachable-scheme.ipynb` and work through it sequentially.
+## Appendix Notebooks
+
+| File | What it covers |
+|------|---------------|
+| `A1-wright-trick.ipynb` | How Craig Wright faked a Satoshi signature in 2016 |
+| `A2-nonsense-signature.ipynb` | The "nonsense signature" algebraic forgery trick |
+| `A3-original-paper.ipynb` | Original research paper companion notebook |
+
+## Teaching
+
+See `SPEAKER-NOTES.md` for bullet-point talking points, live demo callouts, and timing estimates per module (~93 min total).
 
 ## Setup
 
@@ -31,8 +46,4 @@ source .venv/bin/activate
 jupyter lab
 ```
 
-Then open any notebook from the JupyterLab file browser.
-
-## Source
-
-Based on the research paper *Elliptic Curve Cryptography* (695.744 Reverse Engineering & Vulnerability Analysis). The original essay and companion notebook are in the `esixce/ecdsa-lab` repository.
+Then open `00-intro.ipynb` and work through the modules in order.
