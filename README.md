@@ -1,37 +1,21 @@
 # Elliptic Curve Cryptography: From Theory to Bitcoin
 
-Interactive Jupyter notebooks covering the mathematical foundations of elliptic curve cryptography and its applications in Bitcoin — from abstract algebra through ECDSA, Schnorr signatures, and onion routing.
+# Criptografía de Curvas Elípticas: De la Teoría a Bitcoin
 
-## Course Modules
+Interactive Jupyter notebooks covering elliptic curve cryptography and its applications in Bitcoin — from abstract algebra through ECDSA, Schnorr signatures, and onion routing.
 
-Work through these in order. Each notebook is self-contained (shared code is included as a preamble cell).
+Cuadernos Jupyter interactivos que cubren la criptografía de curvas elípticas y sus aplicaciones en Bitcoin — desde álgebra abstracta hasta ECDSA, firmas Schnorr y enrutamiento cebolla.
 
-| # | File | What it covers |
-|---|------|---------------|
-| 0 | `00-intro.ipynb` | Motivation, the two problems ECC solves, roadmap |
-| 1 | `01-algebraic-foundations.ipynb` | Groups, rings, fields, finite fields, projective space |
-| 2 | `02-elliptic-curves.ipynb` | Weierstrass equation, secp256k1 parameters, curves over F_p |
-| 3 | `03-point-operations.ipynb` | Point addition, doubling, scalar multiplication, compression |
-| 4 | `04-key-exchange.ipynb` | ECDH, ElGamal encryption/decryption on curves |
-| 5 | `05-ecdsa.ipynb` | Signing, verification, nonce catastrophe, DER encoding |
-| 6 | `06-bitcoin-applications.ipynb` | Schnorr signatures (BIP 340), ECDH in Lightning onion routing |
-| 7 | `07-exercises.ipynb` | Self-assessment, exercises, knowledge map, further reading |
+## Choose your language / Elige tu idioma
 
-## Appendix Notebooks
+| Language | Directory | README |
+|----------|-----------|--------|
+| English  | [`en/`](./en/) | [en/README.md](./en/README.md) |
+| Español  | [`es/`](./es/) | [es/README.md](./es/README.md) |
 
-| File | What it covers |
-|------|---------------|
-| `A1-wright-trick.ipynb` | How Craig Wright faked a Satoshi signature in 2016 |
-| `A2-nonsense-signature.ipynb` | The "nonsense signature" algebraic forgery trick |
-| `A3-original-paper.ipynb` | Original research paper companion notebook |
+## Setup / Configuración
 
-## Teaching
-
-See `SPEAKER-NOTES.md` for bullet-point talking points, live demo callouts, and timing estimates per module (~93 min total).
-
-## Setup
-
-**Prerequisites:** Python 3.11+
+**Prerequisites / Requisitos:** Python 3.11+
 
 ```bash
 python3 -m venv .venv
@@ -39,11 +23,28 @@ source .venv/bin/activate
 pip install jupyterlab matplotlib numpy plotly
 ```
 
-## Run
+## Run / Ejecutar
 
 ```bash
 source .venv/bin/activate
+cd en/  # or: cd es/
 jupyter lab
 ```
 
-Then open `00-intro.ipynb` and work through the modules in order.
+Open `00-intro.ipynb` and work through the modules in order.
+
+Abre `00-intro.ipynb` y avanza por los módulos en orden.
+
+## Structure / Estructura
+
+```
+elliptic-curves/
+  ecc/          Shared Python package (code lives once)
+  en/           English notebooks + docs
+  es/           Spanish notebooks + docs (cuadernos en español)
+  README.md     This file
+```
+
+All notebooks import from `ecc/` — fix a bug once, both languages get it.
+
+Todos los cuadernos importan de `ecc/` — corrige un bug una vez y ambos idiomas lo reciben.
